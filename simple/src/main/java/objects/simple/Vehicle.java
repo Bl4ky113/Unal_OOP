@@ -18,4 +18,14 @@ public class Vehicle {
 		System.out.printf("Estoy acelerando...\n");
 		return;
 	}
+
+  public void frenar () {
+    System.out.printf("Estoy Frenando...\n");
+    return;
+  }
+
+  public void girar () {
+    System.out.printf("Estoy girando...\n");
+    return;
+  }
 }

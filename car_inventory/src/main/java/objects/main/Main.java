@@ -26,14 +26,23 @@ public class Main {
 
     while (menu_Running) {
       System.out.printf("\n\nIngresar opción del menu:   \033[1m");
-      String userInput = scanner.nextLine();
+      String user_Input = scanner.nextLine();
       System.out.printf("\033[0m");
 
-      char menuOption = userInput.charAt(0);
+      char menu_Option = user_Input.charAt(0);
 
-      switch (menuOption) {
+      switch (menu_Option) {
         case '1':
-          System.out.printf("OPTION 1\n");
+          String[] user_Input_Arr = user_Input.split("&");
+
+          if (user_Input_Arr.length != 5) {
+            System.out.printf("\n\033[1mDatos insuficientes al inscribir el carro\033[0m");
+            break;
+          }
+
+          if (inventory.add_Car(user_Input_Arr) != 0) {
+            System.out.printf("\n\033[1;31mERROR al ingresar los datos del carro\033[0m");
+          }
           break;
         case '2':
           ArrayList<Vehicle> stored_Cars = inventory.get_All_Cars();
@@ -66,9 +75,12 @@ public class Main {
   }
 
   static public void print_Cars (Iterator<Vehicle> car_Iter, int car_Iter_Length) {
+    System.out.printf("\n\nNúmero de carros ingresados: \t\033[1m%d\033[0m\n", car_Iter_Length);
+    System.out.printf("Placa |\t V. Max |\t N. Pasajeros |\t Color/Capacidad (kg)\n");
+
     while (car_Iter.hasNext()) {
-      System.out.println(car_Iter.toString());
-      car_Iter.next();
+      Vehicle car = car_Iter.next();
+      System.out.println(car.toString());
     }
   }
 }

@@ -75,8 +75,8 @@ public class Main {
   }
 
   static public void print_Cars (Iterator<Vehicle> car_Iter, int car_Iter_Length) {
-    System.out.printf("\n\nNúmero de carros ingresados: \t\033[1m%d\033[0m\n", car_Iter_Length);
-    System.out.printf("Placa |\t V. Max |\t N. Pasajeros |\t Color/Capacidad (kg)\n");
+    System.out.printf("\n\nNúmero de carros ingresados: \t\033[1m%d\033[0m\n |", car_Iter_Length);
+    System.out.printf("Tipo |\tPlaca |\t V. Max |\t N. Pasajeros |\t Color/Capacidad (kg)\n");
 
     while (car_Iter.hasNext()) {
       Vehicle car = car_Iter.next();

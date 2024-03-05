@@ -13,7 +13,7 @@ public class IndividualVehicle extends Vehicle {
   public String toString () {
     // Formats es la mejor cosa que le pudo haber pasado a los strings desde alloca
     return String.format(
-      "\033[1m%s\033[0m |\t%d |\t%d |\t%s |\n",
+      "\033[1;35mPrivado\033[0m |\t\033[1m%s\033[0m |\t%d |\t%d |\t%s |",
       plate,
       maxSpeed,
       passengersNum,
